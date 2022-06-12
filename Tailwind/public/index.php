@@ -41,25 +41,26 @@ if (isset($_GET['halaman'])) {
     } elseif ($_GET['halaman'] == "home") {
         include 'navbar.php';
         include 'home.php';
-    } elseif ($_GET['halaman'] == "logout") {
-        include 'logout.php';
+    } elseif ($_GET['halaman'] == "nota") {
+        include 'nota.php';
+    } elseif ($_GET['halaman'] == "history") {
+        include 'navbar.php';
+        include 'history.php';
     }
+} else {
+    include 'logout';
 }
 ?>
 
 <body>
 
 
-    <?php
-
-
-    ?>
 
 
 
 
 
-    <div class="mx-auto mt-20 md:mt-48 bg-orange-200 text-center ">
+    <div class=" bg-orange-200 text-center ">
         <p class="font-semibold text-sm md:text-md p-5">copyright &copy; 2022 rpl</p>
     </div>
 

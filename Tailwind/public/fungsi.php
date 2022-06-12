@@ -1,7 +1,9 @@
 <?php
 
 //koneksi
-$koneksi = mysqli_connect('localhost', 'root', '', 'exmount');
+// $koneksi = mysqli_connect('localhost', 'root', '', 'exmount');
+
+$koneksi = new mysqli('localhost', 'root', '', 'exmount');
 
 // if ($koneksi) {
 //     echo 'berhasil';
@@ -69,4 +71,10 @@ if (isset($_POST['login'])) {
         </script>
         ';
     }
+
+    // funcuion logout
+
+
+
+
 }

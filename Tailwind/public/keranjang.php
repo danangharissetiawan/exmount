@@ -10,6 +10,8 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
     echo "<script>alert('Keranjang kosong, silahkan pilih produk!');</script>";
     echo "<script>location='index.php?halaman=produk';</script>";
 }
+
+
 ?>
 
 
@@ -58,8 +60,14 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                                     <center><img src="foto_mount/<?php echo $pecah['foto_mount1']; ?>" class="rounded-xl" width="150" height="150"></center>
                                 </td>
                                 <td class="px-7 py-4">Rp. <?php echo number_format($pecah["harga_tiket"]); ?></td>
-                                <td class="px-7 py-4">
-                                    <p class="bg-gray-200 mx-14 rounded-md"><?php echo $jumlah; ?></p>
+                                <td class="px-7 py-4" style="display:inline-flex; ">
+                                    <form action="" method="POST" style="margin-top: 50px;">
+                                        <input type="number" name="indexitem" value="<?php echo $i; ?>" hidden>
+                                        <Button class="rounded-full dark:bg-gray-700 enabled:hover:border-gray-400 disabled:opacity-75" type="submit" name="kurang" style="margin-right: 15px; padding: 5px;">-</button>
+                                        <?php echo $jumlah; ?>
+                                        <input type="number" name="indexitem" value="<?php echo $i; ?>" hidden>
+                                        <button class="rounded-full dark:bg-gray-700 enabled:hover:border-gray-400 disabled:opacity-75" type="submit" name="tambah" style="margin-left: 15px; padding: 5px;">+</button>
+                                    </form>
                                 </td>
                                 <td class="px-7 py-4">Rp. <?php echo number_format($subharga); ?></td>
                                 <td class="px-7 py-4">
@@ -139,3 +147,4 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
     </div>
 </section>
 <script src="./js/script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>

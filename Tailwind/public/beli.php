@@ -19,5 +19,5 @@ if (isset($_SESSION['keranjang'][$id_mount])) {
 
 // masuk halaman keranjang
 
-echo "<script>alert('mount telah masuk ke keranjang belanja');</script>";
+echo "<script>alert('Tiket telah masuk ke keranjang belanja');</script>";
 echo "<script>location='index.php?halaman=keranjang'</script>";

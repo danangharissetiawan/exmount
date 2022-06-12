@@ -8,6 +8,13 @@ $id_mount = $_GET["id"];
 $ambil = $koneksi->query("SELECT * FROM mount WHERE id_mount ='$id_mount'");
 $detail = $ambil->fetch_assoc();
 
+if (isset($_POST['beli'])) {
+    $jumlah = $_POST['jumlah'];
+    $_SESSION['keranjang'][$id_mount] = $jumlah;
+
+    echo "<div class='alert alert-success'>Produk telah masuk ke keranjang</div>";
+    echo "<script>location='index.php?halaman=keranjang'</script>";
+}
 
 ?>
 
@@ -76,33 +83,44 @@ $detail = $ambil->fetch_assoc();
 
                 <div class="w-full py-10 px-4 lg:w-1/2">
 
-                    <table class="my-4">
-                        <tr>
-                            <td><b>Harga</b></td>
-                            <td>:</td>
-                            <td>Rp <?php echo number_format($detail['harga_tiket']); ?> / Pendaki</td>
-                        </tr>
-                        <tr>
-                            <td><b>Lokasi</b></td>
-                            <td>:</td>
-                            <td><?php echo $detail['lokasi_mount']; ?></td>
-                        </tr>
-                        <tr>
-                            <td><b>Ketinggian</b></td>
-                            <td>:</td>
-                            <td>3124mdpl</td>
-                        </tr>
-                        <tr>
-                            <td><b>Basecamp</b></td>
-                            <td>:</td>
-                            <td>Wekas</td>
-                        </tr>
-                        <tr>
-                            <td><b><label for="">Tanggal</label></b></td>
-                            <td>:</td>
-                            <td><input class="bg-slate-200 p-1 rounded-lg outline-slate-100" type="date" name="" id=""></td>
-                        </tr>
-                    </table>
+                    <form action="" method="post">
+                        <table class="my-4">
+                            <tr>
+                                <td><b>Harga</b></td>
+                                <td>:</td>
+                                <td>Rp <?php echo number_format($detail['harga_tiket']); ?> / Pendaki</td>
+                            </tr>
+                            <tr>
+                                <td><b>Lokasi</b></td>
+                                <td>:</td>
+                                <td><?php echo $detail['lokasi_mount']; ?></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ketinggian</b></td>
+                                <td>:</td>
+                                <td>3124mdpl</td>
+                            </tr>
+                            <tr>
+                                <td><b>Basecamp</b></td>
+                                <td>:</td>
+                                <td>Wekas</td>
+                            </tr>
+                            <tr>
+                                <td><b>Jumlah</b></td>
+                                <td>:</td>
+                                <td>
+                                    <input type="number" name="jumlah" id="jumlah" min="1" class="w-10 pl-2 bg-gray-600 rounded-md outline-none">
+                                </td>
+
+                                <!-- <tr>
+                                    <td><b><label for="">Tanggal</label></b></td>
+                                    <td>:</td>
+                                    <td><input class="bg-slate-200 p-1 rounded-lg outline-slate-100" type="date" name="" id=""></td>
+                                </tr> -->
+                        </table>
+                        <button name="beli" class="bg-teal-600 text-white p-2 rounded-md hover:opacity-80 w-1/2">Buy</button>
+                    </form>
+
 
                     <p class="text-slate-600"><?php echo $detail['desk_mount']; ?></p>
 
