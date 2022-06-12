@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    </head>
+<body>
+    <!-- Header -->
+    <header class="absolute w-full z-50 px-4">
+        <div class="container mx-auto py-4 px-2">
+            <div class="flex items-center">
+                <div class="w-full pl-6 flex items-center">
+                    <img class="w-6 md:w-8" src="./img/logonew.svg" alt="gunung">
+                    <p class="text-lg font-semibold ml-4 md:text-xl tracking-wider">ExMount</p>
+                </div>
+
+                <div class="w-full"></div>
+                    <!-- hamburg menu -->
+                    <div class="w-auto">
+                        <ul id="menu" class="fixed flex-col invisible items-center justify-center opacity-0
+                    md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex">
+                            <li class="mx-5 py-5 md:py-0">
+                                <a id="navlink" href="#" class="text-black hover:text-emerald-500">Home</a>
+                            </li>
+                            <li class="mx-5 py-5 md:py-0">
+                                <a id="navlink" href="produk.html" class="text-black hover:text-emerald-500">Product</a>
+                            </li>
+                            <li class="mx-5 py-5 md:py-0">
+                                <a id="navlink" href="#review" class="text-black hover:text-emerald-500">Review</a>
+                            </li>
+                            <li class="mx-5 py-5 md:py-0">
+                                <div class="rounded-3xl w-24 pl-5 py-2 bg-emerald-400 hover:bg-emerald-500 cursor-pointer">
+                                    <a href="#" class="text-white">Sign In</a> 
+                                </div>
+                            </li><br>
+                        </ul>
+                    </div>
+
+                    <!-- menu & cart -->
+                    <div class="w-auto">
+                        <ul class="flex items-center">
+                            <li class="ml-6">
+                                <a href="cart.html" class="flex items-center justify-center w-8 h-8 text-black hover:text-emerald-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            
+                            <li class="ml-6 block md:hidden">
+                                <button class="relative flex z-50 items-center justify-center" id="menu-toggler">
+                                    <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">    
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>    
+                                    </button>
+                                    <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(392.8px, 1446.4px, 0px);">
+                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                            <li>
+                                                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="produk.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Product</a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html#review" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Review</a>
+                                            </li>
+                                        </ul>
+                                        <div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign In</a>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>                
+                    
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="w-auto mx-auto relative">
+        <img class="bg-auto w-full opacity-90 brightness-50" src="./img/bg-gunung.png" alt="bg-gunung">    
+        <div class="container w-full absolute md:left-20 top-20 flex flex-col items-center sm:absolute sm:top-36 md:absolute md:top-72">
+            <p class="text-base pb-1 text-orange-100 md:text-md">Welcome to</p>
+            <h1 class="text-3xl text-orange-200 sm:text-3xl md:text-9xl font-bold md:pt-2 tracking-wider">Mountain</h1>
+            <h1 class="text-3xl text-orange-200 sm:text-3xl md:text-9xl font-bold md:pt-3 tracking-wider">In Indonesian</h1>
+            <div class="p-2 mt-4 w-30 flex flex-col items-center bg-orange-400 hover:bg-orange-500 text-orange-200 rounded-xl font-semibold md:p-4 md:mt-24 md:w-36">
+                <a href="#" class="text-sm">Learn More</a>
+            </div>    
+        </div>
+    </section>
+
+    <section class="container w-full mx-auto my-20 md:my-48">
+        <div class="flex items-center flex-col">
+            <h1 class="text-3xl font-bold md:text-6xl pb-2 md:pb-4 tracking-wider">What Is Mountain</h1>
+            <h1 class="text-3xl font-bold md:text-6xl tracking-wider">Hiking?</h1>
+            <div class="flex text-center">
+                <div class="flex-none w-14 md:w-60"></div>
+                <div class="grow">            
+                    <p class="pt-4 md:pt-8 text-sm md:text-lg">Lorem ipsum dolor sit amet iste accusantium voluptatem, sapiente expedita eius dolorum ab eum ducimus quo error, mollitia possimus debitis! Qui nulla laudantium quas sed aperiam</p>
+                </div>
+                <div class="flex-none w-14 md:w-60"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-12 md:flex md:px-20 gap-10">
+        <div class="rounded-lg shadow-lg p-6 mb-10 md:mb-0 bg-slate-100">
+            <img src="./img/discuss.png" alt="">
+            <h1 class="font-bold py-2">DISCUSS</h1>
+            <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        </div>
+        
+        <div class="rounded-lg shadow-lg p-6 mb-10 md:mb-0 bg-slate-100">
+            <img src="./img/discuss.png" alt="">
+            <h1 class="font-bold py-2">DISCUSS</h1>
+            <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        </div>
+        
+        <div class="rounded-lg shadow-lg p-6 bg-slate-100">
+            <img src="./img/discuss.png" alt="">
+            <h1 class="font-bold py-2">DISCUSS</h1>
+            <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        </div>
+    </div>
+
+    <div class="container mx-auto md:flex my-20 md:my-48">
+        <div class="flex grow"></div>
+        <div class="flex-col mx-auto px-12 my-10 md:px-20">
+            <img src="https://source.unsplash.com/600x400" class="rounded-lg shadow-lg mb-4 md:w-full" alt="">
+            <div class="flex gap-6">
+                <div>
+                    <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                </div>
+                <div>
+                    <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                </div>
+                <div>
+                    <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center mx-auto px-12 md:px-14">
+            <div>
+                <h1 class="font-bold text-4xl md:text-5xl tracking-wider">Populer</h1>
+                <h1 class="font-bold text-4xl md:text-5xl pt-3 tracking-wider">Destination</h1>
+                <p class="my-6 text-sm md:text-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum praesentium exercitationem placeat excepturi nam cumque ipsum repellendus, distinctio vel doloremque esse eligendi nesciunt, ut unde molestiae. Vero sunt doloremque laudantium.</p>
+            </div>
+            <div class="md:w-48 px-5 rounded-lg font-semibold bg-red-500 cursor-pointer hover:bg-red-700 p-3">
+                <a href="#" class="text-white">Start Your Search</a>
+            </div>
+        </div>
+        <div class="flex-none w-14 md:w-48"></div>
+    </div>
+    
+    <div class="container flex justify-center mx-auto px-12 md:px-20 md:gap-6">
+        <div class="flex-auto">
+            <h1 class="font-bold text-4xl md:text-5xl tracking-wider">Promo</h1>
+            <h1 class="font-bold text-4xl md:text-5xl pt-3 tracking-wider">Destination</h1>
+            <p class="my-6 text-sm md:text-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum praesentium exercitationem placeat excepturi nam cumque ipsum repellendus, distinctio vel doloremque esse eligendi nesciunt, ut unde molestiae. Vero sunt doloremque laudantium.</p>
+        </div>
+        <div class="md:flex-none md:w-96"></div>
+        <div class="md:flex-none md:w-96"></div> 
+    </div>
+
+    <div id="review" class="container grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 p-4 my-8 mx-auto px-12 md:px-20">
+        <div class="shadow-lg rounded-lg overflow-hidden">
+            <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
+            <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+            <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
+                <a href="#" class="text-white">Review</a>
+            </div>
+        </div>
+        <div class="shadow-lg rounded-lg overflow-hidden">
+            <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
+            <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+            <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
+                <a href="#" class="text-white">Review</a>
+            </div>
+        </div>
+        <div class="shadow-lg rounded-lg overflow-hidden">
+            <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
+            <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+            <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
+                <a href="#" class="text-white">Review</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mx-auto mt-20 md:mt-48 bg-orange-200 text-center ">
+        <p class="font-semibold text-sm md:text-md p-5">copyright &copy; 2022 rpl</p>
+    </div>
+    
+    <script src="./js/script.js"></script>
+    
+    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>   
+</body>
+</html>

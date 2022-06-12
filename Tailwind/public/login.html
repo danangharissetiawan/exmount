@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-popins">
+    <section class="w-full my-32">
+        <div class="container">
+            <div class="flex flex-wrap mx-auto">
+                <div class="w-full items-center px-4 py-10 lg:w-1/2"> 
+                    <img class="rounded-lg" src="./img/mount3.jpg" alt="" width="1000" height="1000">
+                </div>
+                
+                <div class="w-full py-10 px-20 lg:w-1/2">
+                    <div class="inline-flex rounded-md shadow-md bg-gray-200" role="group">
+                        <button id="login" type="button" class="py-2 px-4 text-sm font-medium text-gray-900 rounded-l-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white">
+                            Login
+                        </button>
+                        <button id="regis" type="button" class="py-2 px-4 text-sm font-medium text-gray-900 rounded-r-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white">
+                            Registrasi
+                        </button>
+                    </div>
+                
+                    <div class="w-full overflow-hidden my-5">
+                        <div class="flex w-[200%]">
+                            <!-- LOGIN -->
+                            <form action="" id="loginform" class="w-1/2" method="#">
+                                <h1 class="w-full text-2xl font-extrabold my-3">Login to your account</h1>
+                                <!-- username -->
+                                <div class="relative mb-3">
+                                    <input required type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Username</label>
+                                </div>
+                                <!-- password -->
+                                <div class="relative mb-3">
+                                    <input required type="password" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Password</label>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="flex items-center">
+                                    <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 ">Remember me</label> 
+                                </div>
+                                <!-- btn submit -->
+                                <button type="submit" class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 py-2 px-8 my-5 text-slate-200 rounded-full self-end">
+                                    Login
+                                </button>
+                            </form>
+                            <!-- REGISTRASI -->
+                            <form id="regisform" action="" class="w-1/2" method="#">
+                                <h1 class="w-full text-2xl font-extrabold my-3">Register to your account</h1>
+                                <!-- email -->
+                                <div class="relative">
+                                    <input required type="email" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Email</label>
+                                <!-- username -->
+                                <div class="relative my-3">
+                                    <input required type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Username</label>
+                                </div>
+                                <!-- password -->
+                                <div class="relative mb-3">
+                                    <input required type="password" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Password</label>
+                                </div>
+                                <!-- checkbox -->
+                                <div class="flex items-center">
+                                    <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 ">Remember me</label> 
+                                </div>
+                                <!-- btn submit -->
+                                <button type="submit" class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 py-2 px-8 my-5 text-slate-200 rounded-full self-end">
+                                    Register
+                                </button>
+                            </form>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

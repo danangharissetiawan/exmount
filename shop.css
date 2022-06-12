@@ -1,0 +1,152 @@
+.MU {
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+}
+
+.navbar {
+    background-color: #DB1D24;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+
+.list-group-item-action:hover{
+    background-color:  #DB1D24;
+    color: white;
+
+}
+
+.yolo {
+    padding-bottom: 34px;
+}
+
+.produk{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #DB1D24;
+}
+
+.card-img-top {
+    width: 200px;
+    margin: 10px auto;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-body{
+   background-color: #DB1D24; 
+}
+
+.bintang {
+    margin: 30px 25px 20px;
+    text-align: center;
+}
+
+.copyright{
+    width: 1350px;
+    background-color:  #DB1D24;
+    
+}
+
+.jumbotron {
+    background-image: url(foto/DSC_0390.JPG);
+    background-size: cover;
+    height: 640px;
+    margin-bottom: 0px;
+    position: relative;
+    
+    
+}
+
+.profil {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.data {
+    margin-top: -240px;
+    position: absolute;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1370px;
+
+}
+
+.card {
+    margin: 10px 8px;
+    width: 10rem;
+}
+
+.regis {
+    width: 500px;
+}
+
+
+
+/* DEKSTOP VERSION */
+
+@media (min-width: 992px) { 
+
+    .navbar-brand, .nav-link {
+        color: rgb(0, 0, 0) !important;
+        text-shadow: 1px 1px 1px rgb(0, 0 , 0, 0.7);
+        font-size: 15px;
+    }
+
+    .nav-link {
+        text-transform: uppercase;
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid #ffffff;
+        width: 50%;
+        margin: auto;
+        padding-bottom: 5px;
+        margin-bottom: -8px;
+        
+    }
+
+    .yolo {
+        padding-bottom: 61px;
+    }
+
+    .row .card:hover{
+        box-shadow: 2px 2px 2px rgb(0,0,0,0.4);
+        transform: scale(1.02);
+    }
+
+    .card {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 20px;
+        width: 14rem;
+    }
+
+    .copyright{
+    width: 1500px;
+    background-color:  #DB1D24;
+
+    }
+
+    .copyright-yo{
+        width: 1500px;
+        background-color:  #DB1D24;
+    }
+        
+
+    
+
+    
+
+}
