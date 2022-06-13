@@ -19,7 +19,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 
 
-<section class="pt-20 pb-20 bg-emerald-500">
+<section class="pt-20 pb-20 bg-[#E78F37]">
     <div class="container">
         <div class="w-full px-4">
             <div class="mx-auto">
@@ -112,7 +112,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 
 
-                                    <tr class="bg-white border-b bg-gray-500">
+                                    <tr class="bg-[#E78F37] border-b bg-[#E78F37]">
 
                                         <td colspan="6" class="px-6 py-4 font-bold font-medium text-white whitespace-nowrap">Subtotal</td>
                                         <td class="px-6 py-4 font-bold text-white" name="totalbeli">Rp. <?= number_format($totalbeli); ?></td>
@@ -129,7 +129,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                     <div class="p-4 bg-white items-center">
                         <p class="font-bold text-lg mb-3">Pilihan Tranfer Bank</p>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-                        <select name="id_bank" class="form-control w-1/4 bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select name="id_bank" class="form-control w-1/4 bg-[#E78F37]  border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#E78F37] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="">== Pilih Pembayaran ==</option>
                             <?php
                             $databank = $koneksi->query("SELECT * FROM biaya_admin");
@@ -143,7 +143,8 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                         </select>
                         <hr>
 
-                        <div class="tmpButton" style="margin: 20px 20px 20px 1050px">
+                        <div class="flex tmpButton" style="margin: 20px 20px 20px 1050px">
+                        <a class="w-60 bg-[#F3B15F] p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="./produk.html">Kembali</a>
                             <button name="checkout" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80">Checkout</button>
                         </div>
 

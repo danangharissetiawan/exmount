@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="absolute w-full z-50 px-4">
+    <header class="fixed w-full z-50 px-4 overflow-hidden">
         <div class="container mx-auto py-4 px-2">
             <div class="flex items-center">
                 <div class="w-56 pl-6 flex items-center">

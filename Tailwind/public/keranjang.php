@@ -20,7 +20,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
     <div class="container">
         <div class="w-full px-4">
             <div class="max-w-xl mx-auto text-center mb-16">
-                <h4 class="font-semibold text-lg mb-2 text-teal-500">Cart Product</h4>
+                <h4 class="font-semibold text-lg mb-2 text-[#E78F37]">Cart Product</h4>
                 <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl pb-4">Shopping Cart</h2>
             </div>
         </div>
@@ -88,7 +88,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                 </table>
 
                 <div class="flex my-10 w-1/2">
-                    <a class="w-60 bg-sky-600 p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="./produk.html">Lanjut Belanja</a>
+                    <a class="w-60 bg-[#F3B15F] p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="./produk.html">Lanjut Belanja</a>
                     <button name="sewa">
                         <a class="w-60 bg-green-600 p-3 text-base text-center text-white rounded-lg hover:opacity-80" href="index.php?halaman=checkout">Checkout</a>
                     </button>
