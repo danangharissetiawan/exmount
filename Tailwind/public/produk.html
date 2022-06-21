@@ -11,37 +11,37 @@
     <title>Document</title>
 </head>
 <body>
-     <!-- Header -->
-     <header class="absolute w-full z-50 px-4">
+    <!-- Header -->
+    <header class="absolute w-full z-50 px-4">
         <div class="container mx-auto py-4 px-2">
             <div class="flex items-center">
                 <div class="w-56 pl-6 flex items-center">
                     <img class="w-6 md:w-8" src="./img/logonew.svg" alt="gunung">
                     <p class="text-lg font-semibold ml-4 md:text-xl tracking-wider">ExMount</p>
                 </div>
-
+    
                 <div class="w-full"></div>
                     <!-- hamburg menu -->
                     <div class="w-auto">
                         <ul id="menu" class="fixed flex-col invisible items-center justify-center opacity-0
                     md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex">
                             <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="index.html" class="text-black hover:text-emerald-500">Home</a>
+                                <a id="navlink" href="index.html" class="text-black hover:text-emerald-600">Home</a>
                             </li>
                             <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="produk.html" class="text-black hover:text-emerald-500">Product</a>
+                                <a id="navlink" href="produk.html" class="text-black hover:text-emerald-600">Product</a>
                             </li>
                             <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="index.html#review" class="text-black hover:text-emerald-500">Review</a>
+                                <a id="navlink" href="index.html#review" class="text-black hover:text-emerald-600">Review</a>
                             </li>
                             <li class="mx-5 py-5 md:py-0">
-                                <div class="rounded-3xl w-24 pl-5 py-2 bg-emerald-400 hover:bg-emerald-500 cursor-pointer">
+                                <div class="rounded-3xl w-24 pl-5 py-2 bg-emerald-500 hover:bg-emerald-600 cursor-pointer">
                                     <a href="#" class="text-white">Sign In</a> 
                                 </div>
                             </li><br>
                         </ul>
                     </div>
-
+    
                     <!-- menu & cart -->
                     <div class="w-auto">
                         <ul class="flex items-center">
@@ -82,7 +82,6 @@
                     </div>                
                     
             </div>
-            
         </div>
     </header>
 
@@ -95,12 +94,15 @@
                     <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl pb-4">All Product</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, aperiam deserunt dolore ipsum autem eveniet magnam repellat necessitatibus a labore quis. Alias, distinctio a? Iusto consequuntur placeat neque quas distinctio.</p>
                 </div>
-                <div class="max-w-lg mx-auto relative md:block my-12">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                    </div>
-                    <input type="text" id="search-navbar" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-                </div>
+                <label class="relative max-w-xl mx-auto my-7 block">
+                    <span class="sr-only">Search</span>
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </span>
+                    <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
+                </label>
             </div>
 
             <div class="flex flex-wrap">
@@ -122,7 +124,7 @@
                                     <td>Ngablak, Kab. Magelang</td>
                                 </tr>
                             </table>
-                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-orange-600 py-3 px-6 rounded-lg hover:opacity-80">Detail</a>
+                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-emerald-600 hover:bg-emerald-700 py-3 px-6 rounded-md">Detail</a>
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                                     <td>Ngablak, Kab. Magelang</td>
                                 </tr>
                             </table>
-                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-orange-600 py-3 px-6 rounded-lg hover:opacity-80">Detail</a>
+                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-emerald-600 hover:bg-emerald-700 py-3 px-6 rounded-md">Detail</a>
                         </div>
                         
                     </div>
@@ -168,7 +170,7 @@
                                     <td>Ngablak, Kab. Magelang</td>
                                 </tr>
                             </table>
-                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-orange-600 py-3 px-6 rounded-lg hover:opacity-80">Detail</a>
+                            <a href="detail.html" id="open-btn1" class="font-medium text-sm text-white bg-emerald-600 hover:bg-emerald-700 py-3 px-6 rounded-md">Detail</a>
                         </div>
                         
                     </div>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="fixed w-full z-50 px-4 overflow-hidden">
+    <header class="absolute w-full z-50 px-4">
         <div class="container mx-auto py-4 px-2">
             <div class="flex items-center">
                 <div class="w-56 pl-6 flex items-center">
@@ -47,7 +47,7 @@
                                 <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
                                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                                            <a href="profile.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                                         </li>
                                         <li>
                                             <a href="index.php?halaman=history" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">History</a>

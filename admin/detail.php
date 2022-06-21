@@ -1,16 +1,16 @@
 <h2>Detail Pembelian</h2>
 
 <?php
-$ambil = $koneksi->query("SELECT * FROM pembelian JOIN pelanggan
-    ON pembelian.id_pelanggan=pelanggan.id_pelanggan WHERE
+$ambil = $koneksi->query("SELECT * FROM pembelian JOIN users
+    ON pembelian.id_user = users.id_user  WHERE
     pembelian.id_pembelian='$_GET[id]'");
 $detail = $ambil->fetch_assoc();
 ?>
 
-<strong><?php echo $detail['nama_pelanggan']; ?></strong> <br>
+<strong><?php echo $detail['username']; ?></strong> <br>
 <p>
-    <?php echo $detail['telepon_pelanggan']; ?> <br>
-    <?php echo $detail['email_pelanggan']; ?>
+    <?php echo $detail['telepon']; ?> <br>
+    <?php echo $detail['email']; ?>
 </p>
 
 <p>
@@ -22,26 +22,32 @@ $detail = $ambil->fetch_assoc();
     <thead>
         <tr>
             <td>No</td>
-            <td>Nama Produk</td>
+            <td>Gunung</td>
+            <td>Foto</td>
             <td>Harga</td>
             <td>Jumlah</td>
             <td>Subtotal</td>
+            <td>Tanggal Pendakian</td>
         </tr>
     </thead>
     <tbody>
         <?php $nomer = 1; ?>
-        <?php $ambil = $koneksi->query("SELECT * FROM pembelian_produk JOIN produk ON
-            pembelian_produk.id_produk=produk.id_produk 
-            WHERE pembelian_produk.id_pembelian='$_GET[id]'") ?>
+        <?php $ambil = $koneksi->query("SELECT * FROM pemesanan_tiket JOIN mount ON
+            pemesanan_tiket.id_produk=mount.id_mount 
+            WHERE pemesanan_tiket.id_pembelian='$_GET[id]'") ?>
         <?php while ($pecah = $ambil->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $nomer; ?></td>
-                <td><?php echo $pecah['nama_produk'];  ?></td>
-                <td><?php echo $pecah['harga_produk']; ?></td>
-                <td><?php echo $pecah['jumlah']; ?></td>
+                <td><?php echo $pecah['gunung'];  ?></td>
                 <td>
-                    <?php echo $pecah['harga_produk'] * $pecah['jumlah']; ?>
+                    <img src="../Tailwind/public/foto_mount/<?php echo $pecah['foto_mount1']; ?>" width="250">
                 </td>
+                <td><?php echo $pecah['tiket']; ?></td>
+                <td><?php echo $pecah['jumlah_tiket']; ?></td>
+                <td>
+                    <?php echo $pecah['total']  ?>
+                </td>
+                <td><?php echo $pecah['tanggal_pendakian']; ?></td>
             </tr>
             <?php $nomer++; ?>
         <?php } ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$koneksi = new mysqli("localhost", "root", "", "toko");
+include 'fungsi.php';
 
 
 
@@ -21,13 +21,10 @@ $koneksi = new mysqli("localhost", "root", "", "toko");
 </head>
 
 <body>
-    <div class="top">
-        <h2><span>MU</span>Store</h2>
-        <p>(toko online produk dari manchester united)</p>
-    </div>
+
     <div class="container" style=" color: #DB1D24;">
 
-        <h4><img src="MU.png" alt="" style="margin-right: 40px;">FORM LOGIN</h4>
+        <h4><img src="MU.png" alt="" style="margin-top: 40px;">FORM LOGIN</h4>
         <hr>
         <form action="#" method="POST">
             <div class="form-group">
@@ -73,12 +70,12 @@ $koneksi = new mysqli("localhost", "root", "", "toko");
         <?php
 
         if (isset($_POST['login'])) {
-            $ambil = $koneksi->query("SELECT * FROM aadmin WHERE username='$_POST[user]' AND ppassword='$_POST[pass]'");
+            $ambil = $koneksi->query("SELECT * FROM admin_mount WHERE username='$_POST[user]' AND pass='$_POST[pass]'");
 
             $yangcocok = $ambil->num_rows;
 
             if ($yangcocok == 1) {
-                $_SESSION['aadmin'] = $ambil->fetch_assoc();
+                $_SESSION['admin_mount'] = $ambil->fetch_assoc();
                 echo "<div class='alert alert-info'>Login Sukses</div>";
                 echo "<meta http-equiv='refresh' content='1;url=index.php'>";
             } else {

@@ -1,31 +1,31 @@
 <?php
 session_start();
 //koneksi ke database
-include 'koneksi.php';
+include 'fungsi.php';
 
 $id_pembelian = $_GET['id'];
 
 $ambil = $koneksi->query("SELECT * FROM pembayaran JOIN pembelian ON pembayaran.id_pembelian=pembelian.id_pembelian WHERE pembelian.id_pembelian='$id_pembelian'");
 $detbay = $ambil->fetch_assoc();
 
-// echo "<pre>";
-// print_r($detbay);
-// echo "</pre>";
+echo "<pre>";
+print_r($detbay);
+echo "</pre>";
 
-// echo "<pre>";
-// print_r($_SESSION);
-// echo "</pre>";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
 // Jika belum ada pembayaran
 if (empty($detbay)) {
     echo "<script>alert('Belum ada data pembayaran!');</script>";
-    echo "<script>location='riwayat.php';</script>";
+    echo "<script>location='history.php';</script>";
 }
 
 // Jika data pelanggan yang bayar tidak sesuai yang login
-if ($_SESSION['pelanggan']['id_pelanggan'] != $detbay['id_pelanggan']) {
+if ($_SESSION['users']['id_user'] != $detbay['id_user']) {
     echo "<script>alert('Akses ditolak!');</script>";
-    echo "<script>location='riwayat.php';</script>";
+    echo "<script>location='history.php';</script>";
 }
 
 ?>
@@ -42,7 +42,7 @@ if ($_SESSION['pelanggan']['id_pelanggan'] != $detbay['id_pelanggan']) {
 
 <body>
 
-    <?php include 'templates/navbar.php'; ?>
+
 
     <section class="content">
         <div class="container">
@@ -52,7 +52,7 @@ if ($_SESSION['pelanggan']['id_pelanggan'] != $detbay['id_pelanggan']) {
                     <table class="table">
                         <tr>
                             <th>Nama</th>
-                            <td><?= $detbay['nama']; ?></td>
+                            <td><?= $detbay['penyetor']; ?></td>
                         </tr>
                         <tr>
                             <th>Bank</th>
@@ -64,12 +64,9 @@ if ($_SESSION['pelanggan']['id_pelanggan'] != $detbay['id_pelanggan']) {
                         </tr>
                         <tr>
                             <th>Jumlah</th>
-                            <td>Rp. <?= number_format($detbay['jumlah']); ?>,-</td>
+                            <td>Rp. <?= number_format($detbay['total']); ?>,-</td>
                         </tr>
                     </table>
-                </div>
-                <div class="col-md-6">
-                    <img src="bukti_pembayaran/<?= $detbay['bukti']; ?>" alt="" class="img-responsive">
                 </div>
             </div>
         </div>

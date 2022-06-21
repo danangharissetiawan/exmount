@@ -1,13 +1,13 @@
 <?php
 session_start();
 include 'fungsi.php';
-// if (!isset($_SESSION['users'])) {
-//     echo "<script>alert('Anda Harus Login');</script>";
-//     echo "<script>location='login.php';</script>";
-//     header('location:login.php');
+if (!isset($_SESSION['users'])) {
+    echo "<script>alert('Anda Harus Login');</script>";
+    echo "<script>location='login.php';</script>";
+    header('location:login.php');
 
-//     exit();
-// }
+    exit();
+}
 
 ?>
 
@@ -36,13 +36,13 @@ if (isset($_GET['halaman'])) {
         include 'keranjang.php';
     } elseif ($_GET['halaman'] == "beli") {
         include 'beli.php';
+    } elseif ($_GET['halaman'] == "profil") {
+        include 'profil.php';
     } elseif ($_GET['halaman'] == "checkout") {
         include 'checkout.php';
     } elseif ($_GET['halaman'] == "home") {
         include 'navbar.php';
         include 'home.php';
-    } elseif ($_GET['halaman'] == "nota") {
-        include 'nota.php';
     } elseif ($_GET['halaman'] == "history") {
         include 'navbar.php';
         include 'history.php';

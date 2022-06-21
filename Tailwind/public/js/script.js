@@ -37,3 +37,36 @@ window.onscroll = function () {
     }
 }
 
+// btn sidebar
+let btnprof = document.getElementById("btneditprofil");
+let btnhist = document.getElementById("btnhistory");
+
+let prof = document.getElementById("profile");
+let hist = document.getElementById("history");
+
+btnprof.onclick = function (){
+    hist.style.display = "none";
+    prof.style.display = "block";
+}
+
+btnhist.onclick = function (){
+    prof.style.display = "none";
+    hist.style.display = "block";
+}
+        
+
+
+increment
+function incrementValue($namber){
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+
+function decrementValue($namber){
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    document.getElementById('number').value = value;
+}

@@ -75,7 +75,12 @@ if (!isset($_SESSION['users']) or empty($_SESSION['users'])) {
 										</td>
 										<td class="px-6 py-4">Rp. <?= number_format($pecah['total_pembelian']); ?>,-</td>
 										<td class="px-6 py-4">
-											<a href="nota.php?id=<?= $pecah['id_pembelian']; ?>" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80">Bayar</a>
+											<a href="nota.php?id=<?= $pecah['id_pembelian']; ?>" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80" style="margin-right: 15px;">Nota</a> |
+											<?php if ($pecah['status_pembelian'] == 'Belum Lunas') : ?>
+												<a href="pembayaran.php?id=<?= $pecah['id_pembelian']; ?>" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80" style="margin-left: 15px;">Input Pembayaran</a>
+											<?php else : ?>
+												<a href=" lihat-pembayaran.php?id=<?= $pecah['id_pembelian']; ?>" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80" style="margin-left: 15px;">Lihat Pembayaran</a>
+											<?php endif; ?>
 										</td>
 									</tr>
 								<?php
@@ -94,6 +99,6 @@ if (!isset($_SESSION['users']) or empty($_SESSION['users'])) {
 
 
 
-<script src="https://cdn.tailwindcss.com"></script>
+<script src=" https://cdn.tailwindcss.com"></script>
 <script src="./js/script.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>

@@ -17,6 +17,11 @@ if ($idusertransaksi != $idpelangganyanglogin) {
     echo "<script>location='index.php?halaman=history';</script>";
 }
 
+$id_bank = $detail["id_bank"];
+// query ambil data
+$ambil = $koneksi->query("SELECT * FROM biaya_admin WHERE id_bank ='$id_bank'");
+$cek = $ambil->fetch_assoc();
+
 
 ?>
 
@@ -24,7 +29,7 @@ if ($idusertransaksi != $idpelangganyanglogin) {
 
 <!DOCTYPE html>
 <html lang="en">
-<pre><?php print_r($detail); ?> </pre>
+
 
 <head>
     <meta charset="UTF-8">
@@ -96,6 +101,7 @@ if ($idusertransaksi != $idpelangganyanglogin) {
                                             <th scope="col" class="px-6 py-3">Harga</th>
                                             <th scope="col" class="px-6 py-3">Qty</th>
                                             <th scope="col" class="px-6 py-3">Total</th>
+                                            <th scope="col" class="px-6 py-3">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -112,6 +118,9 @@ if ($idusertransaksi != $idpelangganyanglogin) {
                                                 <td class="px-6 py-4">Rp. <?= number_format($data["tiket"]); ?></td>
                                                 <td class="px-6 py-4"><?= $data["jumlah_tiket"]; ?></td>
                                                 <td class="px-6 py-4">Rp. <?= number_format($data["total"]); ?></td>
+                                                <td class="px-6 py-4">
+                                                    <a href="" class="w-30 bg-green-600 p-3 text-base text-center text-white rounded-lg hover:opacity-80">Sewa Jasa</a>
+                                                </td>
                                             </tr>
 
                                             <?php $number++; ?>
@@ -126,33 +135,17 @@ if ($idusertransaksi != $idpelangganyanglogin) {
                 <div class="w-full px-4 py-3">
                     <div class="mx-auto">
                         <div class="p-4 bg-white items-center">
-                            <p class="font-bold text-lg mb-3">Pilihan Tranfer Bank</p>
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-                            <select class="w-1/4 bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <p class="font-bold text-lg mb-3">Detail Pembayaran</p>
 
-                                <?php
-                                $databank = $koneksi->query("SELECT * FROM biaya_admin");
-                                while ($data = $databank->fetch_assoc()) {
-                                ?>
-                                    <option name="id_bank" value="<?php echo $data["id_bank"] ?>">
-                                        <?php echo $data["nama_bank"] ?>
-                                    </option>
-
-                                <?php } ?>
-                            </select>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="bg-cyan-300 rounded ">
-                                        <?php $id_mount = $_GET["id"];
-                                        // query ambil data
-                                        $ambil = $koneksi->query("SELECT * FROM mount WHERE id_mount ='$id_mount'");
-                                        $cek = $ambil->fetch_assoc(); ?>
-                                        Silahkan lakukan pembayaran Rp. <?= number_format($detail['total_pembelian']); ?>,- ke <br>
-                                        <strong>BANK MANDIRI 123-456-789 AN Penjual</strong>
-                                    </div>
+                            <div class="col-md-7">
+                                <div class="bg-cyan-300 rounded p-5">
+                                    Total Tiket Rp. <?= number_format($detail['total_pembelian']); ?>,-<br>
+                                    <p>Biaya admin Rp. <?= number_format($cek['tarif_admin']); ?>,- </p>
+                                    <strong><?= $cek['nama_bank']; ?> - <?= $cek['no_rekening']; ?> </strong>
+                                    <p></p>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>

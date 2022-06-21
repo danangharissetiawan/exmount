@@ -19,8 +19,20 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 
 
-<section class="pt-20 pb-20 bg-[#E78F37]">
+<!-- header checkout -->
+<section class="py-20 bg-emerald-500">
     <div class="container">
+        <div class="absolute top-5 left-5">
+            <div class="rounded-md shadow-sm">
+                <a href="index.php?halaman=keranjang" aria-current="page" class="flex py-1 px-2 text-sm font-medium text-white hover:text-white bg-emerald-600 hover:bg-emerald-700 rounded-l-lg focus:z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                    </svg>
+                    <p class="items-center p-0.5">back</p>
+                </a>
+            </div>
+
+        </div>
         <div class="w-full px-4">
             <div class="mx-auto">
                 <div class="w-full flex items-center">
@@ -84,6 +96,7 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                                         <th scope="col" class="px-6 py-3">Harga</th>
                                         <th scope="col" class="px-6 py-3">Qty</th>
                                         <th scope="col" class="px-6 py-3">Total</th>
+                                        <th scope="col" class="px-6 py-3">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,16 +108,21 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
                                         $ambil = $koneksi->query("SELECT * FROM mount WHERE id_mount = '$id_mount'");
                                         $detail = $ambil->fetch_assoc();
+
                                         $subharga = $detail["harga_tiket"] * $jumlah;
                                         ?>
+
                                         <tr class="bg-white border-b">
                                             <td class="px-6 py-4"><?= $number; ?></td>
                                             <td class="px-6 py-4"><?= $detail["nama_mount"]; ?></td>
                                             <td class="px-6 py-4"><img src="foto_mount/<?= $detail['foto_mount1']; ?>" class="rounded-md" width="150" height="150" alt=""></td>
-                                            <td class="px-6 py-4"><input class="tanggalan bg-slate-200 p-1 rounded-lg outline-slate-100" type="date" name="tanggalPendakian<?php echo $number; ?>" id="tanggalPendakian"></td>
+                                            <td class="px-6 py-4"><input class="tanggalan bg-slate-200 p-1 rounded-lg outline-slate-100" type="date" class="form-control" name="tanggalPendakian<?php echo $number; ?>" id="tanggalPendakian"></td>
                                             <td class="px-6 py-4">Rp. <?= number_format($detail["harga_tiket"]); ?></td>
                                             <td class="px-6 py-4"><?= $jumlah; ?></td>
                                             <td class="px-6 py-4">Rp. <?= number_format($subharga); ?></td>
+                                            <td class="px-6 py-4">
+                                                <a href="" class="w-30 bg-green-600 p-3 text-base text-center text-white rounded-lg hover:opacity-80">Sewa Jasa</a>
+                                            </td>
                                         </tr>
                                         <?php $totalbeli += $subharga; ?>
                                         <?php $number++; ?>
@@ -112,9 +130,9 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 
 
-                                    <tr class="bg-[#E78F37] border-b bg-[#E78F37]">
+                                    <tr class="bg-white border-b bg-gray-500">
 
-                                        <td colspan="6" class="px-6 py-4 font-bold font-medium text-white whitespace-nowrap">Subtotal</td>
+                                        <td colspan="7" class="px-6 py-4 font-bold font-medium text-white whitespace-nowrap">Subtotal</td>
                                         <td class="px-6 py-4 font-bold text-white" name="totalbeli">Rp. <?= number_format($totalbeli); ?></td>
                                     </tr>
 
@@ -129,22 +147,21 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                     <div class="p-4 bg-white items-center">
                         <p class="font-bold text-lg mb-3">Pilihan Tranfer Bank</p>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-                        <select name="id_bank" class="form-control w-1/4 bg-[#E78F37]  border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#E78F37] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select name="id_bank" class="form-control w-1/4 bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="">== Pilih Pembayaran ==</option>
                             <?php
                             $databank = $koneksi->query("SELECT * FROM biaya_admin");
                             while ($data = $databank->fetch_assoc()) {
                             ?>
-                                <option name="id_bank" value="<?php echo $data["id_bank"] ?>">
-                                    <?php echo $data["nama_bank"] ?>
+                                <option name="id_bank" value="<?php echo $data["id_bank"] ?>" class="form-control">
+                                    <?php echo $data["tarif_admin"]  ?> - <?php echo $data["nama_bank"]  ?>
                                 </option>
-                                <?php $biayaAdmin = $data["biaya_admin"]; ?>
+
                             <?php } ?>
                         </select>
                         <hr>
 
-                        <div class="flex tmpButton" style="margin: 20px 20px 20px 1050px">
-                        <a class="w-60 bg-[#F3B15F] p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="./produk.html">Kembali</a>
+                        <div class="tmpButton" style="margin: 20px 20px 20px 1050px">
                             <button name="checkout" class="font-medium text-sm text-white bg-green-600 py-3 px-6 rounded-lg hover:opacity-80">Checkout</button>
                         </div>
 
@@ -162,9 +179,10 @@ if (isset($_POST["checkout"])) {
     $tanggal = date("Y-m-d");
     $total = $totalbeli;
     $status = "Belum Lunas";
+    $id_bank = $_POST["id_bank"];
 
     // menyimpan data ke tabel pembelian
-    $koneksi->query("INSERT INTO pembelian(id_user, tanggal_pembelian, total_pembelian, status_pembelian ) VALUES ('$id_user', '$tanggal', '$total', '$status')");
+    $koneksi->query("INSERT INTO pembelian(id_user, id_bank, tanggal_pembelian, total_pembelian, status_pembelian ) VALUES ('$id_user', '$id_bank','$tanggal', '$total', '$status')");
 
     // mendapatkan id pembelian baru terjadi
     $id_pembelian_terbaru = $koneksi->insert_id;

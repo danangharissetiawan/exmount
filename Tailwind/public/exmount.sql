@@ -27,12 +27,7 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel `admin_mount`
 --
 
-CREATE TABLE `admin_mount` (
-  `id_admin` int(11) NOT NULL,
-  `nama` varchar(25) NOT NULL,
-  `username` varchar(25) NOT NULL,
-  `pass` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- --------------------------------------------------------
 
@@ -72,35 +67,19 @@ INSERT INTO `mount` (`id_mount`, `nama_mount`, `lokasi_mount`, `foto_mount1`, `f
 -- Struktur dari tabel `users`
 --
 
-CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `pass` varchar(255) NOT NULL,
-  `tgl_daftar` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id_user`, `email`, `username`, `pass`, `tgl_daftar`) VALUES
-(1, 'syaifunnadhif@gmail.com', 'syaifun_nadhif', 'nadhif', '2022-03-21 07:47:47'),
-(2, 'admin@gmail.com', 'admin', '$2y$10$N1ELU/mAab55pFMW16BHyuX8xymmXPDz/QptEKTNqnX2O.DeKwEoe', '2022-03-21 07:52:08'),
-(3, 'masdic.@gmail.com', 'dicky', '$2y$10$fdZDcS4TfG1B0iKaaLFjCOacXZoyNh02N0W2ih4LNotGUp/ID0jqG', '2022-03-30 10:23:24'),
-(4, 'adhi@gmail.com', 'adhi', '$2y$10$nQ3Ebmz0fViPY0qc4HCx.eU3yzDozUAcP8CNExLKtQgwUP7raWrCW', '2022-04-07 06:56:08');
 
---
 -- Indexes for dumped tables
 --
 
 --
 -- Indeks untuk tabel `admin_mount`
 --
-ALTER TABLE `admin_mount`
-  ADD PRIMARY KEY (`id_admin`);
 
---
 -- Indeks untuk tabel `mount`
 --
 ALTER TABLE `mount`
@@ -109,8 +88,6 @@ ALTER TABLE `mount`
 --
 -- Indeks untuk tabel `users`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -118,9 +95,6 @@ ALTER TABLE `users`
 
 --
 -- AUTO_INCREMENT untuk tabel `admin_mount`
---
-ALTER TABLE `admin_mount`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `mount`
@@ -131,9 +105,7 @@ ALTER TABLE `mount`
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
-ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

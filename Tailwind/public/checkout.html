@@ -9,85 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
 </head>
 <body>
-     <!-- Header -->
-     <header class="absolute w-full z-50 px-4 mb-24 bg-slate-100">
-        <div class="container mx-auto py-4 px-2">
-            <div class="flex items-center">
-                <div class="w-56 pl-6 flex items-center">
-                    <img class="w-6 md:w-8" src="./img/logonew.svg" alt="gunung">
-                    <p class="text-lg font-semibold ml-4 md:text-xl tracking-wider">ExMount</p>
-                </div>
-
-                <div class="w-full"></div>
-                    <!-- hamburg menu -->
-                    <div class="w-auto">
-                        <ul id="menu" class="fixed flex-col invisible items-center justify-center opacity-0
-                    md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex">
-                            <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="#" class="text-black hover:text-emerald-500">Home</a>
-                            </li>
-                            <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="produk.html" class="text-black hover:text-emerald-500">Product</a>
-                            </li>
-                            <li class="mx-5 py-5 md:py-0">
-                                <a id="navlink" href="#review" class="text-black hover:text-emerald-500">Review</a>
-                            </li>
-                            <li class="mx-5 py-5 md:py-0">
-                                <div class="rounded-3xl w-24 pl-5 py-2 bg-emerald-400 hover:bg-emerald-500 cursor-pointer">
-                                    <a href="#" class="text-white">Sign In</a> 
-                                </div>
-                            </li><br>
-                        </ul>
-                    </div>
-
-                    <!-- menu & cart -->
-                    <div class="w-auto">
-                        <ul class="flex items-center">
-                            <li class="ml-6">
-                                <a href="cart.html" class="flex items-center justify-center w-8 h-8 text-black hover:text-emerald-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            
-                            <li class="ml-6 block md:hidden">
-                                <button class="relative flex z-50 items-center justify-center" id="menu-toggler">
-                                    <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">    
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                        </svg>    
-                                    </button>
-                                    <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(392.8px, 1446.4px, 0px);">
-                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                                            <li>
-                                                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
-                                            </li>
-                                            <li>
-                                                <a href="produk.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Product</a>
-                                            </li>
-                                            <li>
-                                                <a href="index.html#review" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Review</a>
-                                            </li>
-                                        </ul>
-                                        <div class="py-1">
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign In</a>
-                                        </div>
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>                
-                    
-            </div>
-            
-        </div>
-    </header>
-
-    <section class="pt-32 pb-20 bg-emerald-500">
+    <!-- header checkout -->
+    <section class="py-20 bg-emerald-500">
         <div class="container">
+            <div class="absolute top-5 left-5">
+                <div class="rounded-md shadow-sm">
+                    <a href="cart.html" aria-current="page" class="flex py-1 px-2 text-sm font-medium text-white hover:text-white bg-emerald-600 hover:bg-emerald-700 rounded-l-lg focus:z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                        </svg>
+                        <p class="items-center p-0.5">back</p>
+                    </a>
+                </div>
+                
+            </div>
             <div class="w-full px-4">
                 <div class="mx-auto">
                     <div class="w-full flex items-center">
@@ -100,8 +38,10 @@
         </div>
     </section>
 
+    <!-- main -->
     <section class="py-12 bg-slate-100">
         <div class="container">
+            <!-- informasi -->
             <div class="w-full px-4 py-3">
                 <div class="mx-auto">
                     <div class="p-4 bg-white">
@@ -135,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            <!-- produk yg dipesan -->
             <div class="w-full px-4 py-3">
                 <div class="mx-auto">
                     <div class="p-4 bg-white items-center">
@@ -185,62 +126,111 @@
                     </div>
                 </div>
             </div>
+
+            <!-- metode pembayaran -->
             <div class="w-full px-4 py-3">
                 <div class="mx-auto">
                     <div class="p-4 bg-white items-center">
                         <p class="font-bold text-lg mb-3">Metode Pembayaran</p>
-                        <div class="flex items-center mb-4">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                            <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500">COD</label>
-                        </div>
-                        <div class="flex items-center mb-4">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                            <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500">Transfer Bank</label>
-                        </div>
-                        <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-                        <select id="countries" class="w-1/4 bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>--Pilih Bank--</option>
-                            <option value="US">Bank BRI</option>
-                            <option value="CA">Bank BCA</option>
-                            <option value="DE">Bank BNI</option>
-                            <option value="FR">Bank Mandiri</option>
-                            <option value="FR">Bank Lain</option>
-                        </select><hr>
-                        <div class="">
-                            <p class="text-end">asu</p>
-                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="">
+                                <div class="flex items-center mb-4">
+                                    <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500">Transfer Bank</label>
+                                </div>
+                                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
+                                <select id="countries" class="w-32 bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected>--Pilih Bank--</option>
+                                    <option value="US">Bank BRI</option>
+                                    <option value="CA">Bank BCA</option>
+                                    <option value="DE">Bank BNI</option>
+                                    <option value="FR">Bank Mandiri</option>
+                                    <option value="FR">Bank Lain</option>
+                                </select>
+                                <div class="flex flex-wrap gap-3.5">
+                                    <img src="./img/bca.svg" class="w-20" alt="">
+                                    <img src="./img/mandiri.svg" class="w-20" alt="">
+                                    <img src="./img/bni.svg" class="w-20" alt="">
+                                    <img src="./img/bri.svg" class="w-20" alt="">
+                                </div>
+                                <hr class="my-2">
+                                <div class="my-6">
+                                    <table>
+                                        <tr>
+                                            <td class="pr-14 pb-1">Subtotal Produk</td>
+                                            <td class="pb-1 text-gray-500">Rp. 200.000,-</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="pb-1">Administrasi</td>
+                                            <td class="pb-1  text-gray-500">Rp. 20.000,-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Pembayaran</td>
+                                            <td class="text-2xl text-orange-500 font-semibold">Rp. 220.000,-</td>
+                                        </tr>
+                                    </table>
+                                    <hr class="my-2">
+                                    <button class="bg-emerald-500 py-1 px-8 mt-3 rounded-sm text-white hover:bg-emerald-600">
+                                        <a href="#">Bayar</a>
+                                    </button>
+                                </div>
+                            </div>
+                                
+                            <div class="">
+                                <div class="w-full" aria-label="Sidebar">
+                                    <div class="overflow-y-auto px-3 rounded">
+                                        <div id="dropdown-cta" class="p-4 mt-2 bg-blue-50 rounded-lg dark:bg-blue-900" role="alert">
+                                            <div class="flex items-center mb-3">
+                                                <span class="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">Beta</span>
+                                                <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 inline-flex h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800" data-collapse-toggle="dropdown-cta" aria-label="Close">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                                </button>
+                                            </div>
+                                            <p class="mb-3 text-sm text-blue-900 dark:text-blue-400">
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet rerum recusandae, deleniti delectus vitae natus tenetur autem modi laborum quod velit magni qui vero libero labore ipsam eos doloribus! Vitae.
+                                            </p>
+                                        </div>
+                                        <ul class="space-y-2">
+                                            <div>
+                                                <p class="mt-2 px-2 py-1 text-gray-800 font-bold">No Rekening</p>
+                                                <p class="bg-gray-100 rounded-md p-2 ml-1 text-gray-400">330820250609</p>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="mt-2 px-2 py-1 text-gray-800 font-bold">Bank</p>
+                                                <p class="bg-gray-100 rounded-md p-2 ml-1 text-gray-400">BRI</p>
+                                            </div>
 
+                                            <div>
+                                                <p class="mt-2 px-2 py-1 text-gray-800 font-bold">Atas Nama</p>
+                                                <p class="bg-gray-100 rounded-md p-2 ml-1 text-gray-400">Aditya Widyatmoko</p>
+                                            </div>
+                                            <!-- <li>
+                                            <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                                <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
+                                                <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                                            </a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <!-- <p>heloo</p> -->
+                                <!-- <img src="./img/pay.jpg" class="h-full rounded" alt=""> -->
+                            </div>
+                        </div>
+                        
+                                  
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-slate-100">
-        <div class="container">
-            <div class="w-full px-4 py-3">
-                <div class="mx-auto">
-                    <div class="p-4 bg-white flex items-center">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit sit excepturi veniam accusantium earum cum voluptatibus laudantium numquam dolorem! Numquam vel iste, repellat consequuntur cum neque laborum iure ab est.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full px-4 py-3">
-                <div class="mx-auto">
-                    <div class="p-4 bg-white flex items-center">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit sit excepturi veniam accusantium earum cum voluptatibus laudantium numquam dolorem! Numquam vel iste, repellat consequuntur cum neque laborum iure ab est.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full px-4 py-3">
-                <div class="mx-auto">
-                    <div class="p-4 bg-white flex items-center">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit sit excepturi veniam accusantium earum cum voluptatibus laudantium numquam dolorem! Numquam vel iste, repellat consequuntur cum neque laborum iure ab est.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>
 </body>

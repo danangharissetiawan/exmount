@@ -1,7 +1,7 @@
 <?php
 
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "exmount");
+$koneksi = new mysqli('localhost', 'root', '', 'exmount');
 
 
 function query($query)

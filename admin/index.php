@@ -1,15 +1,15 @@
 ﻿<?php
 
 session_start();
-$koneksi =  new mysqli("localhost", "root", "", "exmount");
+include 'fungsi.php';
 
-// if (!isset($_SESSION['aadmin'])) {
-//     echo "<script>alert('Anda Harus Login');</script>";
-//     echo "<script>location='login.php';</script>";
-//     header('location:login.php');
+if (!isset($_SESSION['admin_mount'])) {
+    echo "<script>alert('Anda Harus Login');</script>";
+    echo "<script>location='login.php';</script>";
+    header('location:login.php');
 
-//     exit();
-// }
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +51,17 @@ $koneksi =  new mysqli("localhost", "root", "", "exmount");
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center">
-                        <img src="assets/img/DSC_0201.JPG" class="user-image img-responsive" />
+                        <img src="assets/img/person.svg" class="user-image img-responsive" style="width: 100px;" />
                     </li>
 
 
                     <li><a class="active-menu" href="index.php"><i class=""></i> Home</a> </li>
                     <li><a class="active-menu" href="index.php?halaman=produk"><i class=""></i> Produk</a> </li>
-                    <li><a class="active-menu" href="index.php?halaman=pembelian"><i class=""></i> Pembeli</a> </li>
+                    <li><a class="active-menu" href="index.php?halaman=pembelian"><i class=""></i> Pembelian</a> </li>
                     <li><a class="active-menu" href="index.php?halaman=pelanggan"><i class=""></i> Pelanggan</a> </li>
+                    <li><a class="active-menu" href="index.php?halaman=laporan_pembelian"><i class=""></i> Laporan Pembelian</a> </li>
                     <li><a class="active-menu" href="index.php?halaman=logout"><i class=""></i> Logout</a> </li>
+
                 </ul>
 
             </div>
@@ -87,9 +89,13 @@ $koneksi =  new mysqli("localhost", "root", "", "exmount");
                         include 'ubahproduk.php';
                     } elseif ($_GET['halaman'] == "logout") {
                         include 'logout.php';
+                    } elseif ($_GET["halaman"] == "pembayaran") {
+                        include 'pembayaran.php';
+                    } elseif ($_GET["halaman"] == "laporan_pembelian") {
+                        include 'laporanPembelian.php';
                     }
                 } else {
-                    include 'home.php';
+                    include 'produk.php';
                 }
 
                 ?>

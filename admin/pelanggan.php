@@ -1,29 +1,29 @@
-<h2>Daftar Pelanggan</h2>
+<h2>Data Pelanggan</h2>
 
 <table class="table table-bordered">
     <thead>
         <tr>
-            <td>No</td>
-            <td>Nama</td>
-            <td>Email</td>
-            <td>Telepon</td>
-            <td>Aksi</td>
+            <th>No</th>
+            <th>Nama Pelanggan</th>
+            <th>Email</th>
+            <th>No Telepon</th>
+
         </tr>
     </thead>
     <tbody>
-        <?php $nomer = 1; ?>
-        <?php $ambil = $koneksi->query("SELECT * FROM pelanggan") ?>
-        <?php while ($pecah = $ambil->fetch_assoc()) { ?>
+
+        <?php $no = 1; ?>
+        <?php $ambil = $koneksi->query("SELECT * FROM users"); ?>
+        <?php while ($pecah = $ambil->fetch_assoc()) : ?>
             <tr>
-                <td><?php echo $nomer; ?></td>
-                <td><?php echo $pecah['nama_pelanggan']; ?></td>
-                <td><?php echo $pecah['email_pelanggan']; ?></td>
-                <td><?php echo $pecah['telepon_pelanggan']; ?></td>
-                <td>
-                    <a href="" class="btn btn-danger">Hapus</a>
-                </td>
+                <td><?= $no; ?></td>
+                <td><?= $pecah["username"]; ?></td>
+                <td><?= $pecah["email"]; ?></td>
+                <td><?= $pecah["telepon"]; ?></td>
+
             </tr>
-            <?php $nomer++; ?>
-        <?php } ?>
+            <?php $no++; ?>
+        <?php endwhile; ?>
+
     </tbody>
 </table>
