@@ -64,9 +64,9 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                                     <td class="px-7 py-4" id="harga<?php echo $number; ?>" value="<?php echo $hargaTiket ?>">Rp. <?php echo number_format($pecah["harga_tiket"]); ?></td>
                                     <td class="px-7 py-4">
 
-                                        <input type="button" onclick="" value="-" />
-                                        <input class="border border-gray-300 rounded-md mx-2 w-6 text-center" id="number" name="jumlah" value="<?php echo $jumlah; ?>" min="0" />
-                                        <input type="button" onclick="" value="+" />
+                                        <input type="button" onclick="decrementValue<?php echo $number; ?>()" value="-" />
+                                        <input class="border border-gray-300 rounded-md mx-2 w-6 text-center" id="number<?php echo $number; ?>" name="jumlah<?php echo $number; ?>" value="<?php echo $jumlah; ?>" min="0" />
+                                        <input type="button" onclick="incrementValue<?php echo $number; ?>()" value="+" />
 
                                     </td>
                                     <td class="px-7 py-4" id="totalHarga<?php echo $number; ?>">Rp. <?php echo number_format($subharga); ?></td>
@@ -85,14 +85,17 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                         </tbody>
 
 
+                    </table>
+                    <!-- Sewa dan Jasa -->
 
-                        <div class="flex my-10 w-1/2">
 
-                            <a class="w-60 bg-sky-600 p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="index.php?halaman=produk">Lanjut Belanja</a>
+                    <div class="flex my-10 w-1/2">
 
-                            <button name="checkout" class="w-60 bg-green-600 p-3 text-base text-center text-white rounded-lg hover:opacity-80">Checkout</button>
+                        <a class="w-60 bg-sky-600 p-3 text-base text-center mr-4 text-white rounded-lg hover:opacity-80" href="index.php?halaman=produk">Lanjut Belanja</a>
 
-                        </div>
+                        <button name="checkout" class="w-60 bg-green-600 p-3 text-base text-center text-white rounded-lg hover:opacity-80">Checkout</button>
+
+                    </div>
                 </div>
 
 
@@ -102,77 +105,8 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 
 
-<script>
-    function formatRupiah(angka, prefix) {
-        var number_string = angka.toString();
-        var split = number_string.split(',');
-        var sisa = split[0].length % 3;
-        var rupiah = split[0].substr(0, sisa);
-        var ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-        // tambahkan titik jika yang di input sudah menjadi angka ribuan
-        if (ribuan) {
-            separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-
-        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
-    }
-
-    <?php
-    $urutan = 1;
-    foreach ($_SESSION["keranjang"] as $id_mount => $jumlah) {
-    ?>
-
-        function incrementValue<?php echo $urutan; ?>() {
-            var value = parseInt(document.getElementById('number<?php echo $urutan; ?>').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value++;
-            document.getElementById('number<?php echo $urutan; ?>').value = value;
-            updateTotalHarga<?php echo $urutan; ?>(value);
-        }
-
-        function decrementValue<?php echo $urutan; ?>() {
-            var value = parseInt(document.getElementById('number<?php echo $urutan; ?>').value, 10);
-            value = isNaN(value) ? 0 : value;
-            value--;
-            document.getElementById('number<?php echo $urutan; ?>').value = value;
-            updateTotalHarga<?php echo $urutan; ?>(value);
-        }
-
-        function updateTotalHarga<?php echo $urutan; ?>(jumlah) {
-            // var harga = parseInt(document.getElementById('harga<?php echo $urutan; ?>').value, 10);
-            var element = document.getElementById("harga<?php echo $urutan; ?>");
-            let harga = parseInt(element.getAttribute("value"));
-            var totalHarga = harga * jumlah;
-
-            document.getElementById('totalHarga<?php echo $urutan; ?>').textContent = formatRupiah(totalHarga, 'Rp. ');
-            // document.getElementById('totalHarga<?php echo $urutan; ?>').textContent = totalHarga;
-        }
-
-    <?php
-        $urutan++;
-    }
-    ?>
-</script>
 
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
-
-<?php
-if (isset($_POST['checkout'])) {
-    $urutan = 1;
-    foreach ($_SESSION["keranjang"] as $id_mount => $jumlah) {
-        $jumlah = $_POST['jumlah' . $urutan];
-        $_SESSION['keranjang'][$id_mount] = $jumlah;
-        $urutan++;
-    }
-
-
-    echo "<div class='alert alert-success'>Produk telah masuk ke keranjang</div>";
-    echo "<script>location='index.php?halaman=checkout'</script>";
-}
-
-?>
