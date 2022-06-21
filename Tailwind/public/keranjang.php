@@ -14,6 +14,74 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 ?>
 
+<style>
+
+.btn-increment-decrement {
+    display: inline-block;
+    padding: 5px 0px;
+    background: #e2e2e2;
+    width: 30px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.input-quantity {
+	border: 0px;
+    width: 30px;
+    display: inline-block;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+// function increment_quantity(cart_id, price) {
+//     var inputQuantityElement = ("#input-quantity-"+cart_id);
+//     var newQuantity = parseInt((inputQuantityElement).val)+1;
+//     var newPrice = newQuantity * price;
+//     save_to_db(cart_id, newQuantity, newPrice);
+// }
+
+// function decrement_quantity(cart_id, price) {
+//     var inputQuantityElement = $("#input-quantity-"+cart_id);
+//     if($(inputQuantityElement).val() > 1) 
+//     {
+//     var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+//     var newPrice = newQuantity * price;
+//     save_to_db(cart_id, newQuantity, newPrice);
+//     }
+// }
+
+// function save_to_db(cart_id, new_quantity, newPrice) {
+// 	var inputQuantityElement = ("#input-quantity-"+cart_id);
+// 	var priceElement = ("#cart-price-"+cart_id);
+//     $.ajax({
+// 		url : "update_cart_quantity.php",
+// 		data : "cart_id="+cart_id+"&new_quantity="+new_quantity,
+// 		type : 'post',
+// 		success : function(response) {
+// 			$(inputQuantityElement).val(new_quantity);
+//             $(priceElement).text("$"+newPrice);
+//             var totalQuantity = 0;
+//             $("input[id*='input-quantity-']").each(function() {
+//                 var cart_quantity = $(this).val();
+//                 totalQuantity = parseInt(totalQuantity) + parseInt(cart_quantity);
+//             });
+//             $("#total-quantity").text(totalQuantity);
+//             var totalItemPrice = 0;
+//             $("div[id*='cart-price-']").each(function() {
+//                 var cart_price = $(this).text().replace("$","");
+//                 totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
+//             });
+//             $("#total-price").text(totalItemPrice);
+// 		}
+// 	});
+// }
+
+</script>
+
 
 
 <section id="blog" class="pt-14 pb-32 bg-gray-100">
@@ -64,12 +132,16 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                                     <td class="px-7 py-4" id="harga<?php echo $number; ?>" value="<?php echo $hargaTiket ?>">Rp. <?php echo number_format($pecah["harga_tiket"]); ?></td>
                                     <td class="px-7 py-4">
 
-                                        <input type="button" onclick="decrementValue<?php echo $number; ?>()" value="-" />
+                                    <div class="btn-increment-decrement" onClick="decrement_quantity(<?php echo $number; ?>, '<?php echo $pecah["harga_tiket"]; ?>')">-</div>
+                                    <input class="border border-gray-300 rounded-md mx-2 w-6 text-center input-quantity" id="input-quantity-<?php echo $number; ?>" value="<?php echo $jumlah; ?>">
+                                    <div class="btn-increment-decrement" onClick="increment_quantity(<?php echo $number; ?>, '<?php echo $pecah["harga_tiket"]; ?>')">+</div>
+                                        <!-- <input type="submit" onclick="decrementValue<?php echo $number; ?>()" value="-" />
                                         <input class="border border-gray-300 rounded-md mx-2 w-6 text-center" id="number<?php echo $number; ?>" name="jumlah<?php echo $number; ?>" value="<?php echo $jumlah; ?>" min="0" />
-                                        <input type="button" onclick="incrementValue<?php echo $number; ?>()" value="+" />
+                                        <input type="submit" onclick="incrementValue<?php echo $number; ?>()" value="+" /> -->
 
                                     </td>
-                                    <td class="px-7 py-4" id="totalHarga<?php echo $number; ?>">Rp. <?php echo number_format($subharga); ?></td>
+                                    <td class="px-7 py-4" id="cart-price-<?php echo $number; ?>" d="totalHarga<?php echo $number; ?>">Rp. <?php echo number_format($subharga); ?></td>
+                                    
                                     <td class="px-7 py-4">
                                         <center>
                                             <a href="hapuskeranjang.php?id=<?= $id_mount; ?>" class="hover:text-red-500 cursor-pointer">
@@ -110,3 +182,49 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
+
+<script>
+
+    function increment_quantity(cart_id, price) {
+    var inputQuantityElement = $("#input-quantity-"+cart_id);
+    var newQuantity = parseInt($(inputQuantityElement).val())+1;
+    var newPrice = newQuantity * price;
+    save_to_db(cart_id, newQuantity, newPrice);
+}
+
+function decrement_quantity(cart_id, price) {
+    var inputQuantityElement = $("#input-quantity-"+cart_id);
+    if($(inputQuantityElement).val() > 1) 
+    {
+    var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+    var newPrice = newQuantity * price;
+    save_to_db(cart_id, newQuantity, newPrice);
+    }
+}
+
+function save_to_db(cart_id, new_quantity, newPrice) {
+	var inputQuantityElement = $("#input-quantity-"+cart_id);
+	var priceElement = $("#cart-price-"+cart_id);
+    $.ajax({
+		url : "update_cart_quantity.php",
+		data : "cart_id="+cart_id+"&new_quantity="+new_quantity,
+		type : 'post',
+		success : function(response) {
+			$(inputQuantityElement).val(new_quantity);
+            $(priceElement).text("$"+newPrice);
+            var totalQuantity = 0;
+            $("input[id*='input-quantity-']").each(function() {
+                var cart_quantity = $(this).val();
+                totalQuantity = parseInt(totalQuantity) + parseInt(cart_quantity);
+            });
+            $("#total-quantity").text(totalQuantity);
+            var totalItemPrice = 0;
+            $("div[id*='cart-price-']").each(function() {
+                var cart_price = $(this).text().replace("$","");
+                totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
+            });
+            $("#total-price").text(totalItemPrice);
+		}
+	});
+}
+</script>
