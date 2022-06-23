@@ -64,9 +64,9 @@ if (empty($_SESSION["keranjang"]) or !isset($_SESSION["keranjang"])) {
                                     <td class="px-7 py-4" id="harga<?php echo $number; ?>" value="<?php echo $hargaTiket ?>">Rp. <?php echo number_format($pecah["harga_tiket"]); ?></td>
                                     <td class="px-7 py-4">
 
-                                        <input type="button" onclick="decrementValue<?php echo $number; ?>()" value="-" />
+                                        <input type="button" class="minus" onclick="decrementValue<?php echo $number; ?>()" value="-" />
                                         <input class="border border-gray-300 rounded-md mx-2 w-6 text-center" id="number<?php echo $number; ?>" name="jumlah<?php echo $number; ?>" value="<?php echo $jumlah; ?>" min="0" />
-                                        <input type="button" onclick="incrementValue<?php echo $number; ?>()" value="+" />
+                                        <input type="button" class="plus" onclick="incrementValue<?php echo $number; ?>()" value="+" />
 
                                     </td>
                                     <td class="px-7 py-4" id="totalHarga<?php echo $number; ?>">Rp. <?php echo number_format($subharga); ?></td>
