@@ -32,36 +32,36 @@
 <div class="container mx-auto px-12 md:flex md:px-20 gap-10">
     <div class="rounded-lg shadow-lg p-6 mb-10 md:mb-0 bg-slate-100">
         <img src="./img/discuss.png" alt="">
-        <h1 class="font-bold py-2">DISCUSS</h1>
-        <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        <h1 class="font-bold py-2">1</h1>
+        <p class="text-sm md:text-md">Can make it easier for users to find mountains</p>
     </div>
 
     <div class="rounded-lg shadow-lg p-6 mb-10 md:mb-0 bg-slate-100">
         <img src="./img/discuss.png" alt="">
-        <h1 class="font-bold py-2">DISCUSS</h1>
-        <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        <h1 class="font-bold py-2">2</h1>
+        <p class="text-sm md:text-md">Can make it easier for users to order in climbing</p>
     </div>
 
     <div class="rounded-lg shadow-lg p-6 bg-slate-100">
         <img src="./img/discuss.png" alt="">
-        <h1 class="font-bold py-2">DISCUSS</h1>
-        <p class="text-sm md:text-md">Omnis modi tenetur beatae consectetur, reiciendis dicta fugiat blanditiis, quos ducimus necessitatibus quidem consequatur id libero! Ullam ipsa ad odit nemo tenetur!</p>
+        <h1 class="font-bold py-2">3</h1>
+        <p class="text-sm md:text-md">Can facilitate the post in marketing</p>
     </div>
 </div>
 
 <div class="container mx-auto md:flex my-20 md:my-48">
     <div class="flex grow"></div>
     <div class="flex-col mx-auto px-12 my-10 md:px-20">
-        <img src="https://source.unsplash.com/600x400" class="rounded-lg shadow-lg mb-4 md:w-full" alt="">
+        <img src="./img/rinjani.jpg" class="rounded-lg shadow-lg mb-4 md:w-full" alt="">
         <div class="flex gap-6">
             <div>
-                <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                <img src="./img/merbabu.jpg" class="rounded-md shadow-lg" style="height: 200px;" alt="">
             </div>
             <div>
-                <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                <img src="./img/bromo.jpg" class="rounded-md shadow-lg" style="height: 200px;" alt="">
             </div>
             <div>
-                <img src="https://source.unsplash.com/600x400" class="rounded-md shadow-lg" alt="">
+                <img src="./img/ijen.jpg" class="rounded-md shadow-lg" style="height: 200px;" alt="">
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
     <div class="flex-auto">
         <h1 class="font-bold text-4xl md:text-5xl tracking-wider">Promo</h1>
         <h1 class="font-bold text-4xl md:text-5xl pt-3 tracking-wider">Destination</h1>
-        <p class="my-6 text-sm md:text-md">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum praesentium exercitationem placeat excepturi nam cumque ipsum repellendus, distinctio vel doloremque esse eligendi nesciunt, ut unde molestiae. Vero sunt doloremque laudantium.</p>
+        <p class="my-6 text-sm md:text-md">The dividends of destination promotion extend far beyond the benefits accruing to visitor-related industries and their suppliers. In addition to attracting visitors, destination marketing drives broader economic growth by sustaining air service, creating familiarity, attracting decision makers, and improving the quality of life in a place.</p>
     </div>
     <div class="md:flex-none md:w-96"></div>
     <div class="md:flex-none md:w-96"></div>
@@ -90,22 +90,22 @@
 
 <div id="review" class="container grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 p-4 my-8 mx-auto px-12 md:px-20">
     <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
-        <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+        <img src="./img/rinjani.jpg" style="height: 310px;" class="bg-cover" alt="">
+        <h1 class="p-3 font-bold text-xl">Rinjani Mount</h1>
         <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
             <a href="#" class="text-white">Review</a>
         </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
-        <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+        <img src="./img/bromo.jpg" class="bg-cover" alt="" style="height: 310px;">
+        <h1 class="p-3 font-bold text-xl">Bromo Mount</h1>
         <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
             <a href="#" class="text-white">Review</a>
         </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden">
-        <img src="https://source.unsplash.com/600x400" class="bg-cover" alt="">
-        <h1 class="p-3 font-bold text-xl">Merbabu Mount</h1>
+        <img src="./img/semeru.jpg" class="bg-cover" alt="" style="height: 310px;">
+        <h1 class="p-3 font-bold text-xl">Semeru Mount</h1>
         <div class="p-2 m-3 rounded-lg bg-orange-500 hover:bg-orange-600 cursor-pointer text-center w-20">
             <a href="#" class="text-white">Review</a>
         </div>

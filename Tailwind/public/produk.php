@@ -11,7 +11,7 @@
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg mb-2 text-teal-500">Product</h4>
                 <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl pb-4">All Product</h2>
-                <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, aperiam deserunt dolore ipsum autem eveniet magnam repellat necessitatibus a labore quis. Alias, distinctio a? Iusto consequuntur placeat neque quas distinctio.</p>
+                <p class="font-medium text-md text-secondary md:text-lg">We provide several choices of mountains that can be ordered online and provide information about ticket prices, altitudes, and the location of the mountain</p>
             </div>
         </div>
 
